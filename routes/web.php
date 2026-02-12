@@ -1,22 +1,25 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mi-nombre', function(){
+Route::get('/mi-nombre', function () {
     return "Sofi";
 });
 
-Route::get('/contactanos', function(){
+Route::get('/contactanos', function () {
     return view("form");
 });
 
+Route::get('/store', function (Request $request) {
+    print_r($request->all());
+});
 
-
-Route::get('/php-basico', function(){
+Route::get('/php-basico', function () {
 
     echo "<h1 style = 'color: red;'> Aprendiendo PHP </h1>";
 
@@ -29,13 +32,13 @@ Route::get('/php-basico', function(){
 
     echo "<br><br> *****ESTRUCTURAS DE CONTROL*****<br><br>";
 
-    $mensaje = "Soy $name, tengo $age años. ". valadateAge($age);
-    $mensaje .= $isLogic ? "Estoy logueado":"no estoy logueado";
+    $mensaje = "Soy $name, tengo $age años. " . valadateAge($age);
+    $mensaje .= $isLogic ? "Estoy logueado" : "no estoy logueado";
 
     echo $mensaje;
 
     echo "<br><br> *****ESTRUCTURAS DE DATOS*****<br><br>";
-    
+
     //Diccionarios 
     $pc = [
         "nombre" => "pc Gamer core9",
@@ -52,19 +55,17 @@ Route::get('/php-basico', function(){
     $listaProductos = [$pc, $teclado];
 
     //For
-    foreach($listaProductos as $item){
+    foreach ($listaProductos as $item) {
         echo $item['nombre'] . "<br>";
     }
-
 });
 
-function valadateAge($age){
+function valadateAge($age)
+{
 
-    if($age >= 18){
-        return "Soy mayor de edad <br>"; 
-    }else{
+    if ($age >= 18) {
+        return "Soy mayor de edad <br>";
+    } else {
         return "Soy menor de edad <br>";
     }
-
 };
-

@@ -79,15 +79,15 @@
 
     <div class="form-container">
         <h2>Formulario</h2>
-
-        <form action="#" method="POST">
+        <!-- Aqui para enrutar -->
+        <form action="/store" method="GET">
             <!-- Campo para el email -->
             <label for="email">Correo electrónico:</label>
             <input type="email" id="email" name="email" required placeholder="Ingresa tu correo">
 
             <!-- Campo para el mensaje -->
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" required placeholder="Escribe tu mensaje"></textarea>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje"></textarea>
 
             <!-- Botón de enviar -->
             <button type="submit">Enviar mensaje</button>
